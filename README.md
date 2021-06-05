@@ -1,6 +1,6 @@
 # Geo Toolbox
 
-toolbox for performing intersect operation.
+toolbox for performing intersect operations.
 
 currently only LineStrings are supported
 
