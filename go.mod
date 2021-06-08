@@ -1,4 +1,4 @@
-module geo-toolbox
+module github.com/arnobroekhof/geo-toolbox
 
 go 1.16
 
