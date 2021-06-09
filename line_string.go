@@ -1,4 +1,4 @@
-package pkg
+package geo_toolbox
 
 type LineString struct {
 	Points []Point
@@ -78,8 +78,8 @@ func intersectionPoint(x1, y1, x2, y2, x3, y3, x4, y4 float64) *Point {
 
 	if px > 0 && py > 0 {
 		return &Point{
-			longitude: px,
-			latitude:  py,
+			Longitude: px,
+			Latitude:  py,
 		}
 	}
 

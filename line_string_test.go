@@ -1,4 +1,4 @@
-package pkg
+package geo_toolbox
 
 import (
 	"github.com/stretchr/testify/assert"
@@ -7,25 +7,25 @@ import (
 
 func TestLineString_NoIntersectDoublePoint(t *testing.T) {
 	l1p1 := Point{
-		latitude:  51.93052146629074,
-		longitude: 4.458684325218201,
+		Latitude:  51.93052146629074,
+		Longitude: 4.458684325218201,
 	}
 	l1p2 := Point{
-		latitude:  51.930346153123985,
-		longitude: 4.458823800086975,
+		Latitude:  51.930346153123985,
+		Longitude: 4.458823800086975,
 	}
 	l1 := LineString{[]Point{
 		l1p1, l1p2,
 	}}
 
 	l2p1 := Point{
-		latitude:  51.83040734742036,
-		longitude: 4.458622634410858,
+		Latitude:  51.83040734742036,
+		Longitude: 4.458622634410858,
 	}
 
 	l2p2 := Point{
-		latitude:  51.83043380979297,
-		longitude: 4.459003508090973,
+		Latitude:  51.83043380979297,
+		Longitude: 4.459003508090973,
 	}
 
 	l2 := LineString{[]Point{
@@ -39,25 +39,25 @@ func TestLineString_NoIntersectDoublePoint(t *testing.T) {
 
 func TestLineString_IntersectDoublePoint(t *testing.T) {
 	l1p1 := Point{
-		latitude:  51.93052146629074,
-		longitude: 4.458684325218201,
+		Latitude:  51.93052146629074,
+		Longitude: 4.458684325218201,
 	}
 	l1p2 := Point{
-		latitude:  51.930346153123985,
-		longitude: 4.458823800086975,
+		Latitude:  51.930346153123985,
+		Longitude: 4.458823800086975,
 	}
 	l1 := LineString{[]Point{
 		l1p1, l1p2,
 	}}
 
 	l2p1 := Point{
-		latitude:  51.93040734742036,
-		longitude: 4.458622634410858,
+		Latitude:  51.93040734742036,
+		Longitude: 4.458622634410858,
 	}
 
 	l2p2 := Point{
-		latitude:  51.93043380979297,
-		longitude: 4.459003508090973,
+		Latitude:  51.93043380979297,
+		Longitude: 4.459003508090973,
 	}
 
 	l2 := LineString{[]Point{
@@ -68,18 +68,18 @@ func TestLineString_IntersectDoublePoint(t *testing.T) {
 	assert.True(t, crossed)
 	assert.Equal(t, Point{51.93041738656155, 4.458767128471792}, point)
 
-	t.Logf("crossed: %v and point is [ %v , %v ] \n", crossed, point.longitude, point.latitude)
+	t.Logf("crossed: %v and point is [ %v , %v ] \n", crossed, point.Longitude, point.Latitude)
 
 }
 
 func TestLineString_IntersectTriplePoint(t *testing.T) {
 	l1p1 := Point{
-		latitude:  51.93052146629074,
-		longitude: 4.458684325218201,
+		Latitude:  51.93052146629074,
+		Longitude: 4.458684325218201,
 	}
 	l1p2 := Point{
-		latitude:  51.930346153123985,
-		longitude: 4.458823800086975,
+		Latitude:  51.930346153123985,
+		Longitude: 4.458823800086975,
 	}
 	l1p3 := Point{
 		51.930346153123985,
@@ -91,13 +91,13 @@ func TestLineString_IntersectTriplePoint(t *testing.T) {
 	}}
 
 	l2p1 := Point{
-		latitude:  51.93040734742036,
-		longitude: 4.458622634410858,
+		Latitude:  51.93040734742036,
+		Longitude: 4.458622634410858,
 	}
 
 	l2p2 := Point{
-		latitude:  51.93043380979297,
-		longitude: 4.459003508090973,
+		Latitude:  51.93043380979297,
+		Longitude: 4.459003508090973,
 	}
 
 	l2 := LineString{[]Point{
@@ -108,18 +108,18 @@ func TestLineString_IntersectTriplePoint(t *testing.T) {
 	assert.True(t, crossed)
 	assert.Equal(t, Point{51.93041738656155, 4.458767128471792}, point)
 
-	t.Logf("crossed: %v and point is [ %v , %v ] \n", crossed, point.longitude, point.latitude)
+	t.Logf("crossed: %v and point is [ %v , %v ] \n", crossed, point.Longitude, point.Latitude)
 
 }
 
 func TestLineString_IntersectTriplePointSwapped(t *testing.T) {
 	l1p1 := Point{
-		latitude:  51.93052146629074,
-		longitude: 4.458684325218201,
+		Latitude:  51.93052146629074,
+		Longitude: 4.458684325218201,
 	}
 	l1p2 := Point{
-		latitude:  51.930346153123985,
-		longitude: 4.458823800086975,
+		Latitude:  51.930346153123985,
+		Longitude: 4.458823800086975,
 	}
 	l1p3 := Point{
 		51.930346153123985,
@@ -131,13 +131,13 @@ func TestLineString_IntersectTriplePointSwapped(t *testing.T) {
 	}}
 
 	l2p1 := Point{
-		latitude:  51.93040734742036,
-		longitude: 4.458622634410858,
+		Latitude:  51.93040734742036,
+		Longitude: 4.458622634410858,
 	}
 
 	l2p2 := Point{
-		latitude:  51.93043380979297,
-		longitude: 4.459003508090973,
+		Latitude:  51.93043380979297,
+		Longitude: 4.459003508090973,
 	}
 
 	l2 := LineString{[]Point{
@@ -148,18 +148,18 @@ func TestLineString_IntersectTriplePointSwapped(t *testing.T) {
 	assert.True(t, crossed)
 	assert.Equal(t, Point{51.93041738656155, 4.458767128471792}, point)
 
-	t.Logf("crossed: %v and point is [ %v , %v ] \n", crossed, point.longitude, point.latitude)
+	t.Logf("crossed: %v and point is [ %v , %v ] \n", crossed, point.Longitude, point.Latitude)
 
 }
 
 func TestLineString_IntersectTriplePointReverse(t *testing.T) {
 	l1p3 := Point{
-		latitude:  51.93052146629074,
-		longitude: 4.458684325218201,
+		Latitude:  51.93052146629074,
+		Longitude: 4.458684325218201,
 	}
 	l1p2 := Point{
-		latitude:  51.930346153123985,
-		longitude: 4.458823800086975,
+		Latitude:  51.930346153123985,
+		Longitude: 4.458823800086975,
 	}
 	l1p1 := Point{
 		51.930346153123985,
@@ -171,13 +171,13 @@ func TestLineString_IntersectTriplePointReverse(t *testing.T) {
 	}}
 
 	l2p1 := Point{
-		latitude:  51.93040734742036,
-		longitude: 4.458622634410858,
+		Latitude:  51.93040734742036,
+		Longitude: 4.458622634410858,
 	}
 
 	l2p2 := Point{
-		latitude:  51.93043380979297,
-		longitude: 4.459003508090973,
+		Latitude:  51.93043380979297,
+		Longitude: 4.459003508090973,
 	}
 
 	l2 := LineString{[]Point{
@@ -188,18 +188,18 @@ func TestLineString_IntersectTriplePointReverse(t *testing.T) {
 	assert.True(t, crossed)
 	assert.Equal(t, Point{51.93041738656155, 4.458767128471792}, point)
 
-	t.Logf("crossed: %v and point is [ %v , %v ] \n", crossed, point.longitude, point.latitude)
+	t.Logf("crossed: %v and point is [ %v , %v ] \n", crossed, point.Longitude, point.Latitude)
 
 }
 
 func TestLineString_multiLineStringExtract(t *testing.T) {
 	l1p1 := Point{
-		latitude:  51.93052146629074,
-		longitude: 4.458684325218201,
+		Latitude:  51.93052146629074,
+		Longitude: 4.458684325218201,
 	}
 	l1p2 := Point{
-		latitude:  51.930346153123985,
-		longitude: 4.458823800086975,
+		Latitude:  51.930346153123985,
+		Longitude: 4.458823800086975,
 	}
 	l1p3 := Point{
 		51.930346153123985,

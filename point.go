@@ -1,24 +1,24 @@
-package pkg
+package geo_toolbox
 
 type Point struct {
-	latitude  float64
-	longitude float64
+	Latitude  float64
+	Longitude float64
 }
 
 func (p Point) Lat() float64 {
-	return p.latitude
+	return p.Latitude
 }
 
 func (p Point) Lon() float64 {
-	return p.longitude
+	return p.Longitude
 }
 
 func (p Point) X() float64 {
-	return p.longitude
+	return p.Longitude
 }
 
 func (p Point) Y() float64 {
-	return p.latitude
+	return p.Latitude
 }
 
 // Coordinates return a float64 array of [ Lon, Lat ]
