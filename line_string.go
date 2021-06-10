@@ -24,7 +24,7 @@ func splitMultipleCoordinates(l LineString) (lines []LineString) {
 
 func (l LineString) Intersect(line LineString) (crossed bool, point Point) {
 	if lp := len(line.Points); lp > 2 {
-		for _, v := range splitMultipleCoordinates(l) {
+		for _, v := range splitMultipleCoordinates(line) {
 			if crossed, point = intersect(l, v); crossed {
 				return crossed, point
 			}
