@@ -34,6 +34,7 @@ jobs:
       id: tag_version
       uses: codacy/git-version@2.2.0
       with:
+        release-branch: main
         prefix: v
 
     - name: Create Release
