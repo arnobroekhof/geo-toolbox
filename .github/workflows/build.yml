@@ -5,13 +5,13 @@ on:
     - 'README.md'
     - '.github'
     branches:
-      - "master"
+      - "main"
   pull_request:
     paths-ignore:
     - 'README.md'
     - '.github'
     branches:
-      - "master"
+      - "main"
 jobs:
   test:
     runs-on: ubuntu-latest
