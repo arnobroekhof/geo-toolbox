@@ -1,4 +1,4 @@
-name: Master-Build
+name: Test and Build
 on:
   push:
     paths-ignore:
@@ -31,6 +31,7 @@ jobs:
       run: make test-all
 
     - name: Git Version
+      if: github.ref == 'refs/heads/main' && github.event_name == 'push'
       id: tag_version
       uses: codacy/git-version@2.2.0
       with:
@@ -38,6 +39,7 @@ jobs:
         prefix: v
 
     - name: Create Release
+      if: github.ref == 'refs/heads/main' && github.event_name == 'push'
       uses: actions/create-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
