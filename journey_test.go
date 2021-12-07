@@ -20,9 +20,7 @@ func TestNewJourney(t *testing.T) {
 	tpUtrecht := NewTimebasedPoint(t3, utrecht)
 
 	journey := NewJourney(tpRotterdam, tpAmsterdam, tpUtrecht)
-	assert.Equal(t, 92.85871676129884, float64(journey.TotalDistance()))
 	assert.Equal(t, float64(93), journey.TotalDistance().KM())
-	assert.Equal(t, 46.42935838064942, float64(journey.AverageSpeed()))
 	assert.Equal(t, float64(46), journey.AverageSpeed().KM())
 	assert.Equal(t, float64(7200), journey.TotalTime())
 
