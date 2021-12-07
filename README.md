@@ -1,8 +1,9 @@
 # Geo Toolbox
 
-toolbox for performing intersect operations.
+toolbox for performing Geo related operations.
 
-currently only LineStrings are supported
+## Intersect
+*NOTE* currently only LineStrings are supported
 
 install:
 
@@ -46,3 +47,6 @@ l1p1 := geo_toolbox.Point{
 ```
 
 ![Example Map](docs/img1.png?raw=true "Example")
+
+# Distance between 2 points
+calculate the distance between 2 points based on the [Vincenty Alghoritm](https://en.wikipedia.org/wiki/Vincenty%27s_formulae)
