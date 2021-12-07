@@ -4,12 +4,14 @@ on:
     paths-ignore:
     - 'README.md'
     - '.github'
+    - 'CODEOWNERS'
     branches:
       - "main"
   pull_request:
     paths-ignore:
     - 'README.md'
     - '.github'
+    - 'CODEOWNERS'
     branches:
       - "main"
 jobs:
