@@ -26,11 +26,10 @@ func TestSmallDistance_Rotterdam(t *testing.T) {
 	west := Point{51.90453, 4.55390}
 
 	miles, km, err := Distance(east, west)
-	expectedKm := 0.02552 // the distance according to Google Maps is 0.02552 km. Using Haversine the distance is 0.02546 km.
-	expectedMiles := 0.01585739283
-	allowedDeviation := 0.005 // 0.5 meters or appr. 16.4 foot
-	println(km)
-	println(miles)
+	expectedKm := 0.025562 // source: https://www.movable-type.co.uk/scripts/latlong-vincenty.html
+	// Google Maps distance is 0.02552 km. Haversine distance is 0.02546 km.
+	expectedMiles := 0.015883490416
+	allowedDeviation := 0.001 // 10cm to allow for rounding differences
 
 	assert.NoError(t, err)
 	assert.True(t,
@@ -47,9 +46,10 @@ func TestDistance_Rotterdam(t *testing.T) {
 	bridge := Point{51.90455, 4.55427}
 
 	miles, km, err := Distance(northsea, bridge)
-	expectedKm := 36.29 // the distance according to Google Maps is 36.29 km. Using Haversine the distance is 36.25105 km.
-	expectedMiles := 22.549561
-	allowedDeviation := 0.11 // 110 meters or appr. 360 foot
+	expectedKm := 36.395404 // source: https://www.movable-type.co.uk/scripts/latlong-vincenty.html
+	// Google Maps distance is 36.29 km. Haversine distance is 36.25105 km.
+	expectedMiles := 22.6150555754
+	allowedDeviation := 0.001 // 10cm to allow for rounding differences
 	println(km)
 
 	assert.NoError(t, err)
