@@ -18,6 +18,14 @@ func NewTimebasedPoint(time time.Time, point Point) TimebasedPoint {
 	}
 }
 
+// absDiff returns the absolute value of time difference between given times
+func absDiff(a, b time.Time) time.Duration {
+	if a.Sub(b) >= 0 {
+		return a.Sub(b)
+	}
+	return b.Sub(a)
+}
+
 //Speed takes TimebasePoint and converts to meters per second and kilometers per hour
 func Speed(p1, p2 TimebasedPoint) (mps, kph float64, err error) {
 	_, k, err := Distance(p1.Point, p2.Point)
@@ -26,7 +34,7 @@ func Speed(p1, p2 TimebasedPoint) (mps, kph float64, err error) {
 	}
 	// convert km to meters
 	meters := k * 1000.0
-	t := p2.Time.Sub(p1.Time)
+	t := absDiff(p1.Time, p2.Time)
 	mps = meters / t.Seconds()
 	kph = (mps * 3600.0) / 1000.0
 	return
